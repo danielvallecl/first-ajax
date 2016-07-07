@@ -14,13 +14,17 @@ $(document).on('ready', function () {
 
   $(".button2").click(function() {
     $.ajax({
-      url: "http://first-ajax-api.herokuapp.com/ping",
+      url: "http://first-ajax-api.herokuapp.com/pong",
       method:  "GET",
       data: {},
       dataType: "text",
     }).done (function (responseData) {
       console.log(responseData);
       $("#step3456").append(responseData);
+  }).fail (function (responseData) {
+      $("#step3456").append("Sorry, I'll try harder next time!");
+  }).always (function (responseData) {
+      $("step3456").append("Hey the request finished!");
   });
 });
 
