@@ -1,5 +1,12 @@
-$(document).ready(function () {
+$(document).on('ready', function () {
 
-  /* Your code goes here */
+  $("button").click(function() {
+    $.ajax({
+    url: "http://first-ajax-api.herokuapp.com/",
+    method: "GET",
+    data: {},
+    dataType: "text",
+  });
+  });
 
 });
