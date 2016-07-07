@@ -28,15 +28,38 @@ $(document).on('ready', function() {
     });
 
     $(".button3").click(function() {
-      $.ajax({
-        url: "http://first-ajax-api.herokuapp.com/count",
-        method: "GET",
-        data: {},
-        dataType: "text",
-      }).done(function (responseData) {
-        console.log(responseData);
-        $("#step7").append(responseData);
-      });
+        $.ajax({
+            url: "http://first-ajax-api.herokuapp.com/count",
+            method: "GET",
+            data: {},
+            dataType: "text",
+        }).done(function(responseData) {
+            console.log(responseData);
+            $("#step7").append(responseData);
+        });
     });
 
-});
+    $(".button4").click(function() {
+        $.ajax({
+            url: "http://first-ajax-api.herokuapp.com/time",
+            method: "GET",
+            data: {},
+            dataType: "html",
+        }).done(function(responseData) {
+            console.log(responseData);
+            $("#step8").append(responseData);
+        });
+    });
+
+    $(".button5").click(function() {
+        $.ajax({
+            url: "http://first-ajax-api.herokuapp.com/a_car",
+            method: "GET",
+            data: {},
+            dataType: "html",
+        }).done(function(responseData) {
+            console.log(responseData);
+            $("#list").append(responseData);
+        });
+    });
+  });
